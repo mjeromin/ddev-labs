@@ -7,6 +7,7 @@
     "license": "ISC",
     "scripts": {
         "start": "node src/server.js",
+        "test-watch": "jasmine-node specs --autotest --watch ./**/*.js",
         "test": "jasmine-node specs"
     },
     "dependencies": {

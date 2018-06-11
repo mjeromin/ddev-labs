@@ -1,3 +1,4 @@
+var primes = require('./primes.js');
 var express = require('express');
 var request=require('request');
 var mustacheExpress = require('mustache-express');
@@ -29,6 +30,17 @@ var getPet = function(callback) {
     });
 }
 
-app.listen(3000, '0.0.0.0');
+//app.listen(3000, '0.0.0.0');
+//console.log("Listening at 0.0.0.0:3000");
+var server = app.listen(3000, '0.0.0.0', function(){
+    console.log("Express server listening on 0.0.0.0:3000");
+});
 
-console.log("Listening at 0.0.0.0:3000");
+exports.stop = function(){
+    server.close();
+}
+
+app.get('/isPrime/:number', function(req, res){
+    res.status(200).send(primes.isPrime(req.params.number));
+
+})
