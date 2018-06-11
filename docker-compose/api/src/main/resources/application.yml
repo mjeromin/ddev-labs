@@ -4,7 +4,7 @@ server:
   contextPath: /
 ---
 spring:
-  profiles: local, default
+  profiles: local
 datasource:
   ddev:
     url: jdbc:h2:~/test
@@ -20,7 +20,7 @@ datasource:
       dialect: org.hibernate.dialect.H2Dialect
 ---
 spring:
-  profiles: postgres
+  profiles: postgres, default
   devtools:
     remote:
       secret: secretkey
