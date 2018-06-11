@@ -9,7 +9,7 @@ app.engine('html', mustacheExpress());          // register file extension
 app.set('views', __dirname);
 
 app.get('/',function(req,res){
-    res.status(200).send('Pets Demo Application');
+    res.status(200).send('ACME Code, Cats, Dogs(?), and Supply');
 });
 
 app.get('/pet',function(req,res){

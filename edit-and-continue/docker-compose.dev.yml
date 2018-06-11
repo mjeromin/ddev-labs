@@ -31,7 +31,7 @@ services:
   ui:
     build:
       context: ui
-      # dockerfile: Dockerfile.dev
+      dockerfile: Dockerfile.dev
     image: ddev_ui
     volumes:
       - ./ui/src:/app/src
