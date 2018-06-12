@@ -3,6 +3,6 @@ RUN mkdir -p /app
 WORKDIR /app
 COPY requirements.txt /app/
 RUN pip install -r requirements.txt
-COPY . /app
+COPY main.py /app
 EXPOSE 8000
-ENTRYPOINT /app/main.py
+CMD ["gunicorn", "--bind", "0.0.0.0:8000", "main:app"]
